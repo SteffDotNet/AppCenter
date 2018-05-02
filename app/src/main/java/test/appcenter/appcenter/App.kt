@@ -5,7 +5,7 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.microsoft.appcenter.push.Push
-import test.appcenter.appcenter.gcm.MyPushListener
+import test.appcenter.appcenter.gcm.AppPushListener
 
 class App : Application(){
 
@@ -13,7 +13,7 @@ class App : Application(){
         super.onCreate()
         Push.setEnabled(true)
         Push.setSenderId("235068313137")
-        Push.setListener(MyPushListener())
+        Push.setListener(AppPushListener())
         AppCenter.start(this, "d6468d49-6cb5-493e-8df2-1fe3aec88278", Analytics::class.java, Crashes::class.java, Push::class.java)
     }
 }
